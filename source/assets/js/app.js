@@ -269,18 +269,16 @@ function drawWaveform (ctx, a, n) {
 }
 
 function drawOutsideWell (ctx, a, n) {
-  var liness = []
-
-  for (let i = a; i <= X; i += 1) {
-    let y = equationLog(i)
-    console.log('x:', i, 'y:', y)
-    liness.push(y)
-  }
-
   ctx.beginPath()
+  ctx.moveTo(originX + 0, originY - 0)
+  ctx.lineTo(0, originY - 0)
+  ctx.moveTo(originX + a, originY - 0)
+  ctx.lineTo(X, originY - 0)
   ctx.lineWidth = 2
-  ctx.strokeStyle = 'green'
-  bzCurve(ctx, liness, 0.3, 1)
+  ctx.strokeStyle = 'blue'
+  ctx.stroke()
+  ctx.closePath()
+  console.log('ran', originX + a, X)
 }
 
 function drawProbabilityDensity (ctx, a, n) {
@@ -311,7 +309,7 @@ function clearCanvas () {
 
 function handleWidth () {
   // let ctx = ctx1
-  var w = wellWidth.value
+  var w = parseInt(wellWidth.value)
   clearCanvas()
   drawWell(ctx1, w, currentHeight)
   drawAxis(ctx1, originY)
@@ -322,7 +320,7 @@ function handleWidth () {
   drawWaveform(ctx3, w, energyIndex)
   drawProbabilityDensity(ctx4, w, energyIndex)
   drawOutsideWell(ctx3, w, energyIndex)
-  // console.log(this.value === w)
+  console.log(originX + w)
   currentWidth = w
   originX = X / 2 - currentWidth / 2
 }
