@@ -31,5 +31,12 @@
   },
   "dependencies": {
     "gulp-standard": "^8.0.4"
-  }
+  },
+  "standard": {
+  "ignore": [
+    "source/assets/js/d3.min.js",
+    "source/assets/js/function-plot.min.js",
+    "source/assets/js/math.min.js"
+  ]
+}
 }

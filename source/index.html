@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Quantum Physics Simulations</title>
+  <title>Quantum Mechanics Simulations</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
@@ -19,7 +19,7 @@
 <body>
 
   <header class="header" role="banner">
-    <h1>Quantum Physics Simulations</h1>
+    <h1>Quantum Mechanics Simulations</h1>
     <!--<nav class="nav" role="navigation">
         <ul>
           <li>
@@ -30,13 +30,18 @@
   </header>
   <div class="wrapper">
     <main class="graphs" role="main">
+      <div>
       <canvas id="box1" class="box"></canvas>
       <canvas id="box2" class="box"></canvas>
+      </div>
+      <div>
       <canvas id="box3" class="box"></canvas>
       <canvas id="box4" class="box"></canvas>
+      </div>
     </main>
 
-    <aside class="controls" role="controls">
+    <aside>
+      <div class="controls" role="controls">
       <!-- <p>Change 'm'</p> -->
       <fieldset id="select-simulation">
         <legend>Select one:</legend>
@@ -47,25 +52,39 @@
         <label for="">Finite Well
           <input type="radio" id="finite" name="simulation" value="Finite Well">
         </label>
+        <br>
+        <label class="hide-sm" for="">Harmonic Oscillator
+          <input type="radio" id="ho" name="simulation" value="Harmonic Oscillator">
+        </label>
       </fieldset>
-      <br>
+      <br />
       <label for="">Width of the well -
-      <input class="well-width" type="range" value="200" min="1" max="400" step="1"/>
+      <input class="well-width" type="range" value="100" min="1" max="250" step="1"/>
       </label>
       <br />
       <label for="">Height(V) of the well -
-      <input class="well-height infinite" type="range" value="100" min="1" max="400" step="1" disabled/>
+      <input class="well-height infinite" type="range" value="120" min="1" max="250" step="1" disabled/>
       </label>
+      <br />
+      <label class="hide-sm" for="">value of K -
+      <input class="k-value infinite" type="range" value="1" min="1" max="10" step="1" disabled/>
+      </label>
+      </div>
+      <br>
+      <br>
+      <br>
       <!-- <input class="lineC" type="range" value="0" min="-100" max="100" step="1"/> -->
-
+      <a href="">Download Files</a>
+      <p>made by <a href="https://github.com/vikas-parashar/">Vikas Parashar</a></p>
     </aside>
   </div>
   <div class="clearfix"></div>
-  <footer class="footer" role="contentinfo">
-    <p>made by <a href="https://github.com/vikas-parashar/">Vikas Parashar</a></p>
-  </footer>
+
 
   <!--<script src="assets/components/jquery/jquery.min.js"></script>-->
+  <script src="assets/js/math.min.js"></script>
+  <script src="assets/js/nerdamer.core.min.js"></script>
+  <script src="assets/js/calculus.min.js"></script>
   <script src="assets/js/app.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -8,12 +8,21 @@ header{
   width: 100%;
 }
 main{
-  width: 80%;
+  // width: 80%;
+  // height: 80vh;
   margin: 5px;
   float: left;
 
+  .box{
+    @media (min-width: 700px){
+      width: auto;
+      height: 45vh
+    }
+    width: 100%;
+    height: 320px;
+  }
+
   canvas{
-    // width: 100%;
     // height: 100%;
     outline: 2px solid #2d2d2d;
     outline-offset: 1px;
@@ -22,10 +31,26 @@ main{
 }
 
 aside{
-  width: 19%;
-  float: right;
+  @media (min-width: 700px) {
+    width: 30%;
+    float: right;
+  }
+  width: 100%;
+  // float: left;
 }
 
 .clearfix{
   clear: both;
+}
+
+@media (max-width: 768px) {
+  .controls{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+  }
+  .hide-sm{
+    display: none;
+  }
 }
